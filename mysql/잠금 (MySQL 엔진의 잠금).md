@@ -13,9 +13,9 @@
 #### GLOBAL LOCK(글로벌 락)
 
 *  FLUSH TABLES WITH READ LOCK 명령으로만 획득 가능
-* 잠금 범위 : 서버 전체
+*  잠금 범위 : 서버 전체
   * 한 세션에서 글로벌 락을 획득하면 다른 세션에서 SELECT를 제외한 대부분의 DDL/DML 문장을 실행하는 경우 글로벌 락이 해제될 때 까지 대기상태로 남음
-* 사용하는 경우
+*  사용하는 경우
   * MyISAM이나 MEMORY 테이블에 대해 mysqldump로 일관된 백업을 받아야 할 때
 
 > 글로벌 락을 거는 "FLUSH TABLES WITH READ LOCK" 명령은 실행과 동시에 MySQL 서버에 존재하는 모든 테이블에 잠금을 건다. "FLUSH TABLES WITH READ LOCK" 명령이 실행되기 전에 테이블이나 레코드에 쓰기 잠금을 걸고 있는 SQL이 실행되고 있었다면, 이 명령은 해당 테이블의 읽기 잠금을 걸기 위해 먼저 실행된 SQL이 완료되고 그 트랜잭션이 완료될 때 까지 기다려야 한다. 그런데 "FLUSH TABLES WITH READ LOCK" 명령은 테이블에 읽기 잠금만 걸기 전에 먼저 테이블을 플러시해야 하기 때문에 테이블에 실행되고 있는 모든 종류의 쿼리가 완료돼야만 테이블을 플러시하고 잠금을 걸 수 있다. 그래서 장시간 SEELCT 쿼리가 실행되고 있을 떄는 "FLUSH TABLES WITH READ LOCK" 명령은 SELECT 쿼리가 종료될 떄까지 기다려야만 한다.
@@ -91,3 +91,11 @@ SELECT RELEASE_LOCK('mylock');
 
 
 
+
+
+
+
+
+#### 참고자료
+
+개발자와 DBA를 위한 Real MySQL, 저 이성욱

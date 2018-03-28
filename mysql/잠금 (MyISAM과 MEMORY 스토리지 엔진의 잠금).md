@@ -105,3 +105,8 @@ KILL client_id;
 
 
 
+
+
+#### 참고자료
+
+개발자와 DBA를 위한 Real MySQL, 저 이성욱

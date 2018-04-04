@@ -113,7 +113,7 @@
 
 * Example
 
-  ![remove b-tree](../picture/remove b-tree.PNG)
+  ![remove b-tree](../picture/remove_b-tree.jpg)
 
 
 

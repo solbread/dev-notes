@@ -94,19 +94,26 @@
 삭제를 하기 위해서는 해당 key를 leaf node로 이동시켜야 한다.
 
 * internal node의 key를 삭제하는 경우
+
   * key를 자식 노드로 보낸 후 삭제한 후, left 자식노드이면 최대값을, right 자식노드이면 최소값을 부모노드로 올린다.
   * key는 ┍M/2┑개 이상인 자식노드로 보내며,
     1. left 자식노드와 right 자식노드가 둘 다 만족하면, left 자식노드를 선택
     2. left 자식노드와 right 자식노드 중 하나만 만족하면, 만족하는 자식노드를 선택
     3. left 자식노드와 right 자식노드가 둘 다 만족하지 않으면, 두 자식노드를 merge
+
 * leaf node의 key를 삭제하는 경우
+
   * leaf node의 key가 ┍M/2┑개 이상
     1. key를 삭제
     2. parent node와 sibling node의 key 수가 모두 ┍M/2┑-1개이면 sibling node중 1개와 parent node를 merge
   * leaf node의 키가 ┍M/2┑개 미만 (┍M/2┑-1개)
     1. key를 삭제
     2. parent node에서 leaf node로 보내고, leaf node의 이웃node를 parent node로 보냄
-    3. 이웃node도 ┍M/2┑-1개 일 경우, parent node의 key를 가져와서 leaf node와 이웃node를 merge
+    3. 이 때, 이웃node도 ┍M/2┑-1개 일 경우 underflow가 발생하므로, parent node의 key를 가져와서 leaf node와 이웃node를 merge
+
+* Example
+
+  ![remove b-tree](C:\Users\jungsol\Documents\GitHub\dev-notes\data structure\picture\remove b-tree.PNG)
 
 
 

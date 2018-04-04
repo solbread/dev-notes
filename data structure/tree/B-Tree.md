@@ -53,13 +53,13 @@
 
 #### 3차 B-Tree
 
-![b-tree(2order)](..\picture\b-tree(3order).png)
+![b-tree(2order)](../picture/b-tree(3order).png)
 
 
 
 #### 5차 B-Tree
 
-![b-tree(5order)](..\picture\b-tree(5order).png)
+![b-tree(5order)](../picture/b-tree(5order).png)
 
 
 
@@ -113,7 +113,7 @@
 
 * Example
 
-  ![remove b-tree](C:\Users\jungsol\Documents\GitHub\dev-notes\data structure\picture\remove b-tree.PNG)
+  ![remove b-tree](../picture/remove b-tree.PNG)
 
 
 

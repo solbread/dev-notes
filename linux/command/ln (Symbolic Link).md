@@ -10,11 +10,11 @@
 
 * 원본은 냅두고 생성된 파일에 대한 심볼릭 링크만 삭제
 
-  ```ln -s origin_path symbolic_link_path```
+  ```rm -f symbolic_link_path```
 
 * 원본은 냅두고 폴더에 대한 심볼릭 링크만 삭제
 
-  ```ln -s origin_path symbolic_link_path``` 	```rm -f symbolic_link_path```
+  ```rm -f symbolic_link_path```
 
   > rm -f symbolic_link_path를 할 때 폴더 뒤에 /를 붙이지 않는다 ex) rm -f test/link
 

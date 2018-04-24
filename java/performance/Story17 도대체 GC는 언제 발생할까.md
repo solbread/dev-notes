@@ -22,7 +22,7 @@
 * PC 레지스터, JVM 스택, 힙(Heap), 메서드 영역, 런타임 상수(constant) 풀, 네이티브 메서드 스택
 * GC가 발생하는 영역은 Heap
 
-![java memory area](C:\Users\jungsol\Documents\study\java\자바 성능 튜닝 이야기\picture\java memory area.png)
+  ![java memory area](./picture/java memory area.png)
 
 * Class Loader Subsystem
 
@@ -73,8 +73,7 @@
 
   * Native Internal Threads (Native method stack)
 
-    * java code가 아닌 달느 언어로 된(보통은 C) 코드들이 실행하게 될 떄의 스택 정보를 관리
-
+    * java code가 아닌 다른 언어로 된(보통은 C) 코드들이 실행하게 될 떄의 스택 정보를 관리
 
 ### GC의 원리
 
@@ -96,7 +95,7 @@
 
 ### Heap Area
 
-![heap memory (previous java8)](C:\Users\jungsol\Documents\study\java\자바 성능 튜닝 이야기\picture\heap memory (previous java8).jpg)
+![heap memory (previous java8)](./picture/heap memory (previous java8).jpg)
 
 * Young
 
@@ -127,9 +126,9 @@
 
 #### Heap Area (after JDK 8)
 
-![heap memory (after java8)](C:\Users\jungsol\Documents\study\java\자바 성능 튜닝 이야기\picture\heap memory (after java8).jpg)
+![heap memory (after java8)](./picture/heap memory (after java8).jpg)
 
-![heap memory2 (after java8)](C:\Users\jungsol\Documents\study\java\자바 성능 튜닝 이야기\picture\heap memory2 (after java8).jpg)
+![heap memory2 (after java8)](./picture/heap memory2 (after java8).jpg)
 
 * JDK8 이후는 perm 영역이 사라지고 Meta space 영역으로 대체됨
 * 참고자료
@@ -142,7 +141,7 @@
 1. 메모리에 객체가 생성되면, Eden에 할당됨
 2. Eden 영역에 데이터가 꽉 차면 비어있는 Survivor 영역으로 GC 후 살아남아 있는 객체가 할당됨
    * 객체의 크기가 Survivor 영역의 크기보다 큰 경우 바로 Old 영역으로 할당됨
-3. Survivor 영역이 차면 GC가 후 살아남은 Eden 영역과 꽉 찬 Survivor 영역의 객체가 비어있는 Survivor 영역으로 할당됨 
+3. Survivor 영역이 차면 GC 후 살아남은 Eden 영역과 꽉 찬 Survivor 영역의 객체가 비어있는 Survivor 영역으로 할당됨 
 4. Survivor 1과 2를 왔다 갔다 하던 객체들은 Old 영역으로 이동됨 
 
 
@@ -187,9 +186,9 @@ Serial Collector, Parallel Collector, Parallel Compacting Collector, Concurrent 
 
 * minor GC
 
-  ![serial collection minor gc](C:\Users\jungsol\Documents\study\java\자바 성능 튜닝 이야기\picture\serial collection minor gc.jpg)
+  ![serial collection minor gc](./picture/serial collection minor gc.jpg)
 
-  ![serial collection after minor gc](C:\Users\jungsol\Documents\study\java\자바 성능 튜닝 이야기\picture\serial collection after minor gc.jpg)
+  ![serial collection after minor gc](./picture/serial collection after minor gc.jpg)
 
   1. 살아 있는 객체들은 Eden 영역에 존재 (위의 그림에서 각각의 둥근 사각형이 객체 하나)
   2. Eden 영역이 꽉 차게 되면 Eden 영역과 From Survivor영역의 살아 있는 객체가 비어있는 Survivor 영역인 To Survivor 영역으로 이동
@@ -198,7 +197,7 @@ Serial Collector, Parallel Collector, Parallel Compacting Collector, Concurrent 
 
 * magor GC : Mark-sweep-compact Collection Algorithm
 
-  ![serial collection after major gc](C:\Users\jungsol\Documents\study\java\자바 성능 튜닝 이야기\picture\serial collection after major gc.jpg)
+  ![serial collection after major gc](./picture/serial collection after major gc.jpg)
 
   * 쓰이지 않는 객체를 표시해서 삭제하고 한 곳으로 모으는 알고리즘
   * 표시 단계(Mark) : Old 영역으로 이동도니 객체들 중 살아 있는 객체를 식별
@@ -221,7 +220,7 @@ Serial Collector, Parallel Collector, Parallel Compacting Collector, Concurrent 
 
 #### Parallel Compacting Collecotr (병렬 콤팩팅 콜렉터)
 
-![parallel collector stop the world](C:\Users\jungsol\Documents\study\java\자바 성능 튜닝 이야기\picture\parallel collector stop the world.png)
+![parallel collector stop the world](./picture/parallel collector stop the world.png)
 
 * 사용
 
@@ -252,7 +251,7 @@ Serial Collector, Parallel Collector, Parallel Compacting Collector, Concurrent 
 
 #### Concurrent Mark-Sweep (CMS) Collector (CMS 콜렉터)
 
-![cms collector stop the word](C:\Users\jungsol\Documents\study\java\자바 성능 튜닝 이야기\picture\cms collector stop the word.png)
+![cms collector stop the word](./picture/cms collector stop the word.png)
 
 * low-latency collecotr (로우 레이턴시 콜렉터)
 
@@ -273,7 +272,7 @@ Serial Collector, Parallel Collector, Parallel Compacting Collector, Concurrent 
 
 * major gc
 
-  ![cms collector process](C:\Users\jungsol\Documents\study\java\자바 성능 튜닝 이야기\picture\cms collector process.png)
+  ![cms collector process](./picture/cms collector process.png)
 
   1. 초기 표시 단계(Initail Mark) : 매우 짧은 대기 시간으로 살아 있는 객체를 찾는 단계
 
@@ -291,7 +290,7 @@ Serial Collector, Parallel Collector, Parallel Compacting Collector, Concurrent 
 
 #### Garbage First (G1) Collector (G1 콜렉터)
 
-![g1 collector overview](C:\Users\jungsol\Documents\study\java\자바 성능 튜닝 이야기\picture\g1 collector overview.png)
+![g1 collector overview](./picture/g1 collector overview.png)
 
 * 사용
 
@@ -369,5 +368,7 @@ Serial Collector, Parallel Collector, Parallel Compacting Collector, Concurrent 
 * [Java specs](https://docs.oracle.com/javase/specs/)
   * [The Java Virtual Machine Specification, Java SE 9 Edition (Java Memory Areas)](https://docs.oracle.com/javase/specs/jvms/se9/jvms9.pdf)
 * [Oracle 메모리 관리 백서(java memory management whitepaper)](http://www.oracle.com/technetwork/java/javase/memorymanagement-whitepaper-150215.pdf)
-* [Java Garbage Collector (블로그 정리글)](http://d2.naver.com/helloworld/1329)
+* [Java Garbage Collector (블로그 정리글)](http://d2.naver.com/helloworld/1329
+* [the machanism of garbage collectors in java](http://searene.me/2017/05/07/the-machanism-of-garbage-collectors-in-Java/)
+
 

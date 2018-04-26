@@ -1,4 +1,4 @@
-## MyISAM과 MEMORY 스토리지 엔진의 잠금
+## Lock - MyISAM, MEMORY
 
 MyISAM이나 MEMORY 스토리지 엔진은 자체적인 잠금을 가지지 않고 MySQL 엔진에서 제공하는 테이블 락을 그대로 사용한다.
 

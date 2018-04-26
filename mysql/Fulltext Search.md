@@ -1,4 +1,4 @@
-## MySQL 전문 검색(Fulltext Search)
+## Fulltext Search
 
 
 

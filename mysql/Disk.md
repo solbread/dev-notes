@@ -1,4 +1,4 @@
-## 디스트 읽기 방식
+## Disk
 
 컴퓨터의 CPU나 메모리와 같은 전기적 특성을 띤 장치의 성능은 짧은 시간 동안 매우 빠른 속도로 발전했지만 디스크와 같은 기계식 장치의 성능은 상당히 제한적으로 발전했다.
 
@@ -51,7 +51,7 @@
 
 #### 랜덤 I/O와 순차 I/O
 
-![random io and sequentail io definition](C:\Users\jungsol\Documents\GitHub\dev-notes\mysql\picture\random io and sequentail io definition.jpg)
+![random io and sequentail io definition](./picture/random io and sequentail io definition.jpg)
 
 ​					위의 그림에서 1, 2, 3, 4, 6은 Random I/O, 5는 Sequentail I/O
 
@@ -61,7 +61,7 @@
 
 차이점은,
 
-![reandom io and sequential io](C:\Users\jungsol\Documents\GitHub\dev-notes\mysql\picture\reandom io and sequential io.jpg)
+![reandom io and sequential io](./picture/reandom io and sequential io.jpg)
 
 * 랜덤 I/O는 3개의 페이지를 디스크에 기록하기 위해 3번 시스템 콜 (=디스크에 기록해야 할 위치를 찾기 위해 디스크 헤더를 3번 움직임)
 * 순차 I/O는 3개의 페이지를 디스크에 기록하기 위해 1번 시스템 콜 (=디스크에 기록해야 할 위치를 찾기 위해 디스크의 헤드를 1번 움직임)

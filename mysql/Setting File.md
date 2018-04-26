@@ -1,4 +1,4 @@
-## MySQL 설정파일
+## Setting File
 
 
 

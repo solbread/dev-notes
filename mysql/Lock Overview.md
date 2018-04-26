@@ -1,4 +1,4 @@
-## MySQL 엔진의 잠금
+## Lock Overview
 
 #### 잠금의 레벨
 

@@ -1,4 +1,4 @@
-## MySQL 시스템 변수
+## Variables - System Variables
 
 #### 시스템 변수
 

@@ -1,4 +1,4 @@
-## MySQL 동시성
+## Concurrency
 
 #### 잠금
 

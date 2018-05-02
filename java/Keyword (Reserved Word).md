@@ -1,4 +1,4 @@
-## keyword (Reserved Word)
+## Keyword (Reserved Word)
 
 [java docs - Java Language Keywords](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html)
 

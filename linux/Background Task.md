@@ -21,4 +21,4 @@
   * 확인 `ps -ef ${task_name}
 * 종료 `kill ${pid}`
 * 로그
-  * nohup으로 실행된 쉘 스크립트는 자동으로 nohup.out 이라는 이름으로 nohup을 실행한 위치에 자동생성k
+  * nohup으로 실행된 쉘 스크립트는 자동으로 nohup.out 이라는 이름으로 nohup을 실행한 위치에 자동생성

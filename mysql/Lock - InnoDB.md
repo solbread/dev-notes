@@ -53,7 +53,7 @@ InnoDB는 레코드 기반의 잠금 방식 때문에 MyISAM보다는 훨씬 뛰
 
 참고자료 : [토토 블로그 , InnoDB에서 사용되는 Lock의 종류](http://intomysql.blogspot.kr/2010/12/innodb-lock_2880.html)
 
-![innoDB lock type](C:\Users\jungsol\Documents\GitHub\dev-notes\mysql\picture\innoDB lock type.jpg)
+![innoDB lock type](picture\innoDB lock type.jpg)
 
 * Record lock (Record only lock, 레코드 락)
 * Gap lock (갭 락)

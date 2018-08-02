@@ -37,13 +37,13 @@
 
 * 온라인 서비스 용도의 데이터베이스는 READ COMMITTED와 REPEATABLE READ 둘 중 하나를 주로 사용
 * 오라클은 주로 READ COMMITTED 수준 사용
-* MySQL은 주로 REPEATABLE READ 수준 사용
+* MySQL은 주로 REPEATABLE READ 수준 사용 
 
 
 
 #### READ UNCOMMITTED (DIRTY READ)
 
-![isolation - read uncommitted(dirty read)](C:\Users\jungsol\Documents\GitHub\dev-notes\mysql\picture\isolation - read uncommitted(dirty read).jpg)
+![isolation - read uncommitted(dirty read)](picture\isolation - read uncommitted(dirty read).jpg)
 
 1. 트랜잭션의 변경 내용이 COMMIT이나 ROLLBACK 여부에 상관 없이 다른 트랜잭션에서 보여짐
    * Transaction A에서 x=1인 레코드에 대해 쓰기 작업을 하고, Transaction B에서 x=1인 레코드에 대해 조회를 하면 Transaction A가 커밋되지 않은 상태에서도 새로 쓰여진 x=1에 대해 조회가 됨
@@ -64,7 +64,7 @@
 
 #### READ COMMITTED (NON-REPEATABLE READ)
 
-![isolation - read committed (non-repeatable read)](C:\Users\jungsol\Documents\GitHub\dev-notes\mysql\picture\isolation - read committed (non-repeatable read).jpg)
+![isolation - read committed (non-repeatable read)](picture\isolation - read committed (non-repeatable read).jpg)
 
 1. MVCC 변경방식을 이용하여 트랜잭션에서 변경한 내용은 COMMIT이 완료되기 전까지는 언두(Undo) 영역에 있는 정보로 조회되며, COMMIT이 완료되어야만 다른 트랜잭션에서 조회할 수 있음
 
@@ -94,7 +94,7 @@
 
 #### REPEATABLE READ (PHANTOM READ)
 
-![isolation - repeatable read (phantom read)](C:\Users\jungsol\Documents\GitHub\dev-notes\mysql\picture\isolation - repeatable read (phantom read).jpg)
+![isolation - repeatable read (phantom read)](picture\isolation - repeatable read (phantom read).jpg)
 
 1. READ COMMITTED와 동일하게 MVCC 변경방식을 이용하는데,  언두 영역에 백업되는 레코드 버전에 차이가 있음. REPEATABLE READ에서는 실행중인 트랜잭션보다 오래된 트랜잭션 번호들의 언두 영역의 데이터는 삭제 할 수 없으며 이 언두 영역의 데이터를 이용해서 하나의 트랜잭션 내에서 똑같은 SELECT 쿼리를 실행했을 때는 항상 같은 결과를 가져옴
    * 모든 InnoDB의 트랜잭션은 고유한 트랜잭션 번호(순차적으로 증가하는 값)를 가지며, 언두 영역에 백업된  모든 레코드에는 변경을 발생시킨 트랜잭션의 번호가 포함되어 있음. 언두 영역의 백업된 데이터는 InnoDB 스토리지 엔진이 불필요하다고 판단하는 시점에 주기적으로 삭제하는데, REPEATABLE REAED에서는 현재 트랜잭션보다 이전 트랜잭션들의 언두데이터가 보존되므로, 동일 트랜잭션 내에서는 동일 SELECT 쿼리를 실행하면 현재 트랜잭션보다 이전 트랜잭션의 레코드를 보여주므로 결과가 동일함

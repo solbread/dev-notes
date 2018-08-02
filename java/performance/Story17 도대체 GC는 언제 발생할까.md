@@ -19,10 +19,12 @@
 
 #### Java Memory Area
 
+* [Java의 Runtime Data Area](http://www.holaxprogramming.com/2013/07/16/java-jvm-runtime-data-area/)
+
 * PC 레지스터, JVM 스택, 힙(Heap), 메서드 영역, 런타임 상수(constant) 풀, 네이티브 메서드 스택
 * GC가 발생하는 영역은 Heap
 
-  ![java memory area](./picture/java memory area.png)
+  ![java memory area](../picture/java memory area.png)
 
 * Class Loader Subsystem
 
@@ -89,13 +91,13 @@
    >
    > > 행(Hang) : 서버가 요청을 처리 못하고 있는 상태
    > >
-   > > hang <<美 속어>> (컴퓨터가) 정체하다, 움직이지 않게되다.
+   > > hang <<美 속어>> (컴퓨터가) 정체하다, 움직이지 않게되다.사용
    >
    > 만약 JVM의 최대 메모리 크기를 지정해서 전부 사용한 다음, GC를 해도 더 이상 사용 가능한 메모리 영역이 없는데 계속 메모리를 할당하려고 하면 OutOfMemoryError가 발생하여 JVM이 다운될 수 있음
 
 ### Heap Area
 
-![heap memory (previous java8)](./picture/heap memory (previous java8).jpg)
+![heap memory (previous java8)](../picture/heap memory (previous java8).jpg)
 
 * Young
 
@@ -126,9 +128,9 @@
 
 #### Heap Area (after JDK 8)
 
-![heap memory (after java8)](./picture/heap memory (after java8).jpg)
+![heap memory (after java8)](../picture/heap memory (after java8).jpg)
 
-![heap memory2 (after java8)](./picture/heap memory2 (after java8).jpg)
+![heap memory2 (after java8)](../picture/heap memory2 (after java8).jpg)
 
 * JDK8 이후는 perm 영역이 사라지고 Meta space 영역으로 대체됨
 * 참고자료
@@ -186,9 +188,9 @@ Serial Collector, Parallel Collector, Parallel Compacting Collector, Concurrent 
 
 * minor GC
 
-  ![serial collection minor gc](./picture/serial collection minor gc.jpg)
+  ![serial collection minor gc](../picture/serial collection minor gc.jpg)
 
-  ![serial collection after minor gc](./picture/serial collection after minor gc.jpg)
+  ![serial collection after minor gc](../picture/serial collection after minor gc.jpg)
 
   1. 살아 있는 객체들은 Eden 영역에 존재 (위의 그림에서 각각의 둥근 사각형이 객체 하나)
   2. Eden 영역이 꽉 차게 되면 Eden 영역과 From Survivor영역의 살아 있는 객체가 비어있는 Survivor 영역인 To Survivor 영역으로 이동
@@ -197,7 +199,7 @@ Serial Collector, Parallel Collector, Parallel Compacting Collector, Concurrent 
 
 * magor GC : Mark-sweep-compact Collection Algorithm
 
-  ![serial collection after major gc](./picture/serial collection after major gc.jpg)
+  ![serial collection after major gc](../picture/serial collection after major gc.jpg)
 
   * 쓰이지 않는 객체를 표시해서 삭제하고 한 곳으로 모으는 알고리즘
   * 표시 단계(Mark) : Old 영역으로 이동도니 객체들 중 살아 있는 객체를 식별
@@ -220,7 +222,7 @@ Serial Collector, Parallel Collector, Parallel Compacting Collector, Concurrent 
 
 #### Parallel Compacting Collecotr (병렬 콤팩팅 콜렉터)
 
-![parallel collector stop the world](./picture/parallel collector stop the world.png)
+![parallel collector stop the world](../picture/parallel collector stop the world.png)
 
 * 사용
 
@@ -251,7 +253,7 @@ Serial Collector, Parallel Collector, Parallel Compacting Collector, Concurrent 
 
 #### Concurrent Mark-Sweep (CMS) Collector (CMS 콜렉터)
 
-![cms collector stop the word](./picture/cms collector stop the word.png)
+![cms collector stop the word](../picture/cms collector stop the word.png)
 
 * low-latency collecotr (로우 레이턴시 콜렉터)
 
@@ -370,5 +372,6 @@ Serial Collector, Parallel Collector, Parallel Compacting Collector, Concurrent 
 * [Oracle 메모리 관리 백서(java memory management whitepaper)](http://www.oracle.com/technetwork/java/javase/memorymanagement-whitepaper-150215.pdf)
 * [Java Garbage Collector (블로그 정리글)](http://d2.naver.com/helloworld/1329
 * [the machanism of garbage collectors in java](http://searene.me/2017/05/07/the-machanism-of-garbage-collectors-in-Java/)
+* http://www.holaxprogramming.com/2017/10/09/java-jvm-performance/
 
 

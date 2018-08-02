@@ -60,6 +60,12 @@ volatile 변수에 대한 읽기와 쓰기는 변수를 메인 메모리로 부�
 
 
 
+#### Happens-Before
+
+* Java1.5 이상에서 보장되는 성질로 한 쓰레드가 volatile 변수를 수정할 때, 단지 이 volatile 변수만이 메인 메모리로 저장되는 것이 아니라, 이 쓰레드가 volatile 변수를 수정하기 전에 수정한 모든 변수들이 함께 메인 메모리에 저장(flushed)
+
+
+
 #### 추가적으로 읽어볼 자료
 
 [jenkov : volatile](http://tutorials.jenkov.com/java-concurrency/volatile.html)

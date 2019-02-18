@@ -7,6 +7,23 @@
 * top-level 함수와 클래스 정의는 2줄 띄기
 * 클래스 내의 메소드 정의는 1줄 띄기
 
+아래와 같이 top-level 함수 끼리는 2줄의 공백이, class 안의 함수는 1줄의 공백을 갖는 것이 권장사항이다.
+```
+def top_level_method():
+    print("top level method")
+ 
+    
+def top_level_method():
+    print("top level method")
+    
+    
+class TopLevelClass(object):
+    def __init__(self):
+        pass
+        
+    def class_method(self):
+        pass
+```
 
 
 #### Whitespace in Expressions and Statements
@@ -20,6 +37,7 @@
 
 #### Comments
 
+* 주석의 종류는 2가지로, 한 줄 작성 시 `#` 으로 시작하며 여러 줄 작성 시에는 quote 혹은 double quote 3개를 주석에 해당하는 부분에 감싸준다.
 * 코드와 모순되는 주석은 있어서는 안되며 항상 코드에 따라 갱신
 * 불필요한 주석은 제거
 * 한 줄 주석은 신중히 작성
@@ -75,13 +93,13 @@
   ```
 
 - `raise ValueError('message')`가 (예전에 쓰이던) `raise ValueError, 'message'`보다 권장
-- 예외를 `except:`로 잡기보단 명확히 예외를 명시 (ex. `except ImportError:`)
-- `try:` 블록의 코드는 필요한 것만 최소한으로 작성
+- 예외를 `except`로 잡기보단 명확히 예외를 명시 (ex. `except ImportError`)
+- `try` 블록의 코드는 필요한 것만 최소한으로 작성
 - `string` 모듈보다는 `string` 메소드를 사용. 메소드는 모듈보다 더 빠르고, 유니코드 문자열에 대해 같은 API를 공유
 - 접두사나 접미사를 검사할 때는 `startswith()`와 `endswith()`를 사용
 - 객체의 타입을 비교할 때는 `isinstance()`를 사용
 - 빈 시퀀스(문자열, 리스트(list), 튜플(tuple))는 조건문에서 거짓(false)
-- 불린형(boolean)의 값을 조건문에서 `==`를 통해 비교금지
+- 불린형(boolean)의 값을 조건문에서 `==`를 통해 비교금지 (ex `if stmt` 혹은 `if not stmt` 형식으로 작성)
 
 
 
